@@ -1,0 +1,8 @@
+<div class="carousel">
+  <div class="slides">
+    <div class="slide"><img src="https://github.com/martic97/Notion/blob/main/1.jpg?raw=true" alt="Immagine 1"></div>
+    <div class="slide"><img src="https://github.com/martic97/Notion/blob/main/2.jpg?raw=true" alt="Immagine 2"></div>
+    <div class="slide"><img src="https://github.com/martic97/Notion/blob/main/3.jpg?raw=true" alt="Immagine 3"></div>
+    <div class="slide"><img src="https://github.com/martic97/Notion/blob/main/4.jpg?raw=true" alt="Immagine 4"></div>
+    </div>
+</div>
