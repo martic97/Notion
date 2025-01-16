@@ -34,7 +34,7 @@
       width: 100%;
       height: 100%;
       opacity: 0;
-      transition: opacity 1s ease-in-out; /* Aumentato il tempo della transizione */
+      transition: opacity 1s ease-in-out;
     }
 
     .slide.current {
@@ -57,34 +57,24 @@
       background: url("https://raw.githubusercontent.com/martic97/Notion/refs/heads/main/4.png") no-repeat center top/cover;
     }
 
-.slide:nth-child(5) {
+    .slide:nth-child(5) {
       background: url("https://raw.githubusercontent.com/martic97/Notion/refs/heads/main/10.png") no-repeat center top/cover;
     }
-
-    /* Rimuovere le frecce */
-    .buttons {
-      display: none;
-    }
-
   </style>
 </head>
 
 <body>
-  <!-- partial:index.partial.html -->
   <div class="slider">
     <div class="slide current"></div>
     <div class="slide"></div>
     <div class="slide"></div>
     <div class="slide"></div>
+    <div class="slide"></div>
   </div>
 
-  <!-- Rimosso il blocco delle frecce -->
-
-  <!-- partial -->
   <script>
     const slides = document.querySelectorAll(".slide");
-    const auto = true;
-    const intervalTime = 8000;  // Aumentato il tempo tra le slide (da 5000ms a 8000ms)
+    const intervalTime = 8000;
     let slideInterval;
 
     const nextSlide = () => {
@@ -97,21 +87,14 @@
       }
     };
 
-    const prevSlide = () => {
-      const current = document.querySelector(".current");
-      current.classList.remove("current");
-      if (current.previousElementSibling) {
-        current.previousElementSibling.classList.add("current");
-      } else {
-        slides[slides.length - 1].classList.add("current");
-      }
-    };
-
-    if (auto) {
+    document.querySelector(".slider").addEventListener("click", () => {
+      clearInterval(slideInterval);
+      nextSlide();
       slideInterval = setInterval(nextSlide, intervalTime);
-    }
-  </script>
+    });
 
+    slideInterval = setInterval(nextSlide, intervalTime);
+  </script>
 </body>
 
 </html>
